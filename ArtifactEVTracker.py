@@ -21,9 +21,9 @@ def getHeroPrice():
         if card['asset_description']['type'] == 'Common Card':
             sumPrice += card['sell_price']
         elif card['asset_description']['type'] == 'Uncommon Card':
-            sumPrice += (card['sell_price'] * 2) / 9
+            sumPrice += card['sell_price']  / 3
         elif card['asset_description']['type'] == 'Rare Card':
-            sumPrice += card['sell_price'] / 9
+            sumPrice += card['sell_price'] / 6
         
     sumPrice /= total
     sumPrice /= 100
