@@ -36,7 +36,8 @@ def translateRarity(rarity):
     elif rarity == "rare":
         return "tag_Rarity_Rare"
 def calcEv(common, uncommon, rare, hero):
-    return common * 8 + uncommon * 2 + rare + hero
+    return (common * 8 + uncommon * 2 + rare + hero) * .88 / 2
+    #takes out steam's cut, gives ratio based on pack price
 if __name__ == '__main__':
     print(calcEv(getAveragePrice('common'), getAveragePrice('uncommon'),getAveragePrice('rare'), getHeroPrice()))
 #not sure on the exact ratios - change out the 2s for 1s and the 9s for 10s for something lower, then cut uncommons for minimum
